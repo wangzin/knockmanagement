@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Barista Cafe HTML CSS Template</title>
+
+        <!-- CSS FILES -->                
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+            
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/vegas.min.css" rel="stylesheet">
+
+        <link href="css/tooplate-barista.css" rel="stylesheet">
+		
+        
+<!--
+
+Tooplate 2137 Barista Cafe
+
+https://www.tooplate.com/view/2137-barista-cafe
+
+Bootstrap 5 HTML CSS Template
+
+-->
+<style>
+.sticky-social-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    margin-bottom: 1px; /* Small gap between icons */
+}
+
+/* MCA Group-style colors */
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #1da1f2; }
+.linkedin { background-color: #0077b5; }
+.email { background-color: #bc8d5f; } /* Matches Barista template brown */
+
+.social-icon:hover {
+    width: 55px; /* Slight expansion on hover */
+    padding-left: 10px;
+    color: white;
+    background-color: #333; /* Darkens on hover */
+}
+
+
+
+.custom-block-wrap {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.custom-block-wrap:hover {
+    transform: translateY(-10px);
+}
+
+.custom-block-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.custom-block {
+    padding: 25px;
+    text-align: center;
+}
+
+.custom-block h4 {
+    color: #bc8d5f; /* Template Gold/Brown */
+    font-weight: 700;
+}
+
+
+
+#section_why_choose_us {
+    background-color: #f9f9f9; /* Light grey background to separate from other sections */
+}
+
+.why-choose-item {
+    padding: 30px 20px;
+    background: #ffffff;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.why-choose-item:hover {
+    border-bottom: 3px solid #bc8d5f; /* Accent color from template */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.icon-box {
+    font-size: 40px;
+    color: #bc8d5f;
+}
+
+.why-choose-item h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.why-choose-item p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+
+.process-card {
+    position: relative;
+    padding: 40px 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    z-index: 1;
+}
+
+.process-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #bc8d5f;
+}
+
+.process-number {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: 800;
+    color: black;
+    z-index: -1;
+}
+
+.process-icon {
+    font-size: 35px;
+    color: #bc8d5f;
+    margin-bottom: 20px;
+}
+
+.process-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.process-card p {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.6;
+}
+.mca-cleaning-process {
+    background-color: #002d5b; /* MCA Navy Blue */
+    padding: 50px 0;
+    color: white;
+    overflow: hidden;
+}
+</style>
+    </head>
+    
+    <body>
+                
+            <main>
+			<div class="sticky-social-sidebar">
+    <a href="#" class="social-icon facebook"><i class="bi-facebook"></i></a>
+    <a href="#" class="social-icon twitter"><i class="bi-twitter"></i></a>
+    <a href="#" class="social-icon linkedin"><i class="bi-linkedin"></i></a>
+    <a href="mailto:knockagency@gmail.com" class="social-icon email"><i class="bi-envelope"></i></a>
+</div>
+                <nav class="navbar navbar-expand-lg">                
+                    <div class="container">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html">
+                            <img src="images/logo1.JPEG" class="navbar-brand-image img-fluid" alt="Barista Cafe Template">
+                        </a>
+        
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+        
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-lg-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_1">Home</a>
+                                </li>
+        
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_2">About</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_3">Our Services</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                                </li>
+                            </ul>
+
+                            <div class="ms-lg-3">
+                                <a class="btn custom-btn custom-border-btn" href="reservation.html">
+                                    Free consultation
+                                    <i class="bi-arrow-up-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+				
+
+
+                <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+
+                    <div class="container">
+                        <div class="row align-items-center">
+
+                            <div class="col-lg-6 col-12 mx-auto">
+                                <h2 class="text-white">Knock Management </h2>
+
+                                <p class="text-white mb-4 pb-lg-2 team-block-wrap pt-3">
+                                    <b>Professional Commercial Cleaning & Janitorial Services in Toronto</b>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="hero-slides"></div>
+                </section>
+				
+                <section class="about-section section-padding" id="section_2">
+                    <div class="section-overlay"></div>
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-12">
+                                <div class="ratio ratio-1x1">
+                                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                                        <source src="videos/pexels-mike-jones-9046237.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video> 
+
+                                    <div class="about-video-info d-flex flex-column">
+                                        <h4 class="mt-auto">We Started Since 2018.</h4>
+                                        <h4>Best staffing in Toronto.</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-12 mt-4 mt-lg-0 mx-auto">
+                                <h2 class="text-white mb-3">Knock Management</h2>
+                                <p class="text-white">Knock Management is a dynamic new enterprise offering integrated operational support and resource solutions. We address critical, everyday challenges for businesses by providing reliable staffing, specialized cleaning services, and plans for sustainable agricultural production. Our mission is to be a versatile partner that enhances our clients' operational efficiency, cleanliness, and resource stability. This plan details our phased strategy to launch and scale our core service lines, establish a strong market presence, and build a financially sustainable company poised for growth.</p>
+                                <a href="#" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Read More</a>
+                                <a href="reservation.html" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Free consultation</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+				<section class="section-padding" id="section_industries">
+					<div class="container">
+						<div class="row">
+
+							<div class="col-lg-12 col-12 text-center">
+								<h2 class="mb-5">Industries We Serve</h2>
+							</div>
+
+							<div class="col-lg-4 col-md-6 col-12 mb-4">
+								<div class="custom-block-wrap">
+									<img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" class="custom-block-image img-fluid" alt="Retail and Office">
+									<div class="custom-block">
+										<h4 class="mt-3">Retail & Professional</h4>
+										<p class="mb-0">Prisinte cleaning for banks, retail stores, and professional offices to ensure a premium client experience.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 col-md-6 col-12 mb-4">
+								<div class="custom-block-wrap">
+									<img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" class="custom-block-image img-fluid" alt="Industrial Facility">
+									<div class="custom-block">
+										<h4 class="mt-3">Industrial & Manufacturing</h4>
+										<p class="mb-0">Reliable staffing solutions for light industrial factories and manufacturing plants across the GTA.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 col-md-6 col-12 mb-4">
+								<div class="custom-block-wrap">
+									<img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=800&q=80" class="custom-block-image img-fluid" alt="Local Farming">
+									<div class="custom-block">
+										<h4 class="mt-3">Agriculture & Local Farms</h4>
+										<p class="mb-0">Supporting local farms with seasonal staffing and developing sustainable agricultural production.</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+				
+				<section class="section-padding bg-light" id="section_why_choose_us">
+					<div class="container">
+						<div class="row">
+							
+							<div class="col-lg-12 col-12 text-center">
+								<h2 class="mb-5">Why Choose Knock Management?</h2>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<div class="icon-box mb-3">
+										<i class="bi-shield-check"></i>
+									</div>
+									<h5>Proven Reliability</h5>
+									<p>We solve the pain point of inconsistent quality by implementing strict operational protocols.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<div class="icon-box mb-3">
+										<i class="bi-gear-wide-connected"></i>
+									</div>
+									<h5>Integrated Solutions</h5>
+									<p>From commercial cleaning to industrial staffing, we provide a single point of contact for your operations.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<div class="icon-box mb-3">
+										<i class="bi-geo-alt"></i>
+									</div>
+									<h5>GTA Expertise</h5>
+									<p>Headquartered in Toronto, we understand the local market needs of SMBs across the Greater Toronto Area.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<div class="icon-box mb-3">
+										<i class="bi-flower1"></i>
+									</div>
+									<h5>Sustainable Growth</h5>
+									<p>Our unique "Knock Grow" initiative ensures we grow alongside the community through sustainable practices.</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/dswa.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/dswa.png" alt="Proven Experience" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3539 entered loaded et-animated" data-ll-status="loaded">
+									<h5>Proven Experience</h5>
+									<p>30+ years in the commercial cleaning industry and 500+ satisfied clients across the GTA.</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/fs.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/fs.png" alt="Professional &amp; Reliable Team" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3540 entered loaded et-animated" data-ll-status="loaded">
+									<h5>Professional & Reliable Team</h5>
+									<p>Fully trained, insured, and background-checked staff dedicated to quality and consistency.</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/udtcyh.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/udtcyh.png" alt="Eco-Friendly Approach" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3542 entered loaded et-animated" data-ll-status="loaded">
+									<h5>Eco-Friendly Approach</h5>
+									<p>We use advanced, environmentally safe products and modern equipment for a cleaner, healthier workspace.</p>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="why-choose-item text-center">
+									<img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/xgfd.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/xgfd.png" alt="Guaranteed Quality" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3544 entered loaded et-animated" data-ll-status="loaded">
+									<h5>Insured and Bonded and Guaranteed Quality</h5>
+									<p>Regular inspections and a satisfaction guarantee ensure every job meets the highest standards.</p>
+								</div>
+							</div>
+							<div class="container text-center mt-4">
+								<p class="lead">Ready to stabilize your business operations?</p>
+								<a href="#section_5" class="btn custom-btn">Request a Free Quote</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section class="section-padding mca-cleaning-process" id="section_process">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12 col-12 text-center">
+								<h2 class="mb-5 text-white">Our Cleaning Process</h2>
+								<p class="mb-5 text-white">Our systematic approach ensures that every facility we manage meets the highest standards of cleanliness and hygiene.</p>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="process-card">
+									<div class="process-icon">
+									<img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-21-1.png" data-src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-21-1.png" alt="Site Assessment &amp; Planning" >
+									</div>
+									<div class="process-number">01</div>
+									<h4>Step 1: Understanding Your Requirements</h4>
+									<p>We start by talking to the client and understanding the size, type, and frequency of cleaning needed. This ensures the service is tailored to their facility.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="process-card">
+									<div class="process-icon">
+									<img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-10-1.png" >
+									</div>
+									<div class="process-number">02</div>
+									<h4>Step 2: Customized Cleaning Plan</h4>
+									<p>Based on the requirements, we create a personalized cleaning plan that fits the client’s schedule, facility type, and unique needs.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="process-card">
+									<div class="process-icon">
+									<img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-9-1.png" >
+									</div>
+									<div class="process-number">03</div>
+									<h4>Step 3: Professional Cleaning Service</h4>
+									<p>Our trained technicians carry out the cleaning using professional equipment and methods, following the customized plan to ensure consistent quality.</p>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-6 col-12 mb-4">
+								<div class="process-card">
+									<div class="process-icon">
+									<img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-8-1.png" >
+									</div>
+									<div class="process-number">04</div>
+									<h4>Step 4: Quality Check & Ongoing Support</h4>
+									<p>After each service, we check the results, gather client feedback, and provide ongoing support to ensure satisfaction and long-term service reliability.</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+
+                
+
+                <section class="contact-section section-padding" id="section_5">
+                    <div class="container">
+                        <div class="row">   
+
+                            <div class="col-lg-12 col-12">
+                                <em class="text-white">Say Hello</em>
+                                <h2 class="text-white mb-4 pb-lg-2">Contact</h2>
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <form action="#" method="post" class="custom-form contact-form" role="form">
+
+                                <div class="row">
+                                    
+                                    <div class="col-lg-6 col-12">
+                                        <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
+
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Jackson" required="">
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">
+                                        <label for="email" class="form-label">Email Address</label>
+
+                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jack@gmail.com" required="">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">How can we help?</label>
+
+                                        <textarea name="message" rows="4" class="form-control" id="message" placeholder="Message" required=""></textarea>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 col-12 mx-auto mt-3">
+                                    <button type="submit" class="form-control">Send Message</button>
+                                </div>
+                            </form>
+                            </div>
+
+                            <div class="col-lg-6 col-12 mx-auto mt-5 mt-lg-0 ps-lg-5">
+                                <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5039.668141741662!2d72.81814769288509!3d19.043340656729775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c994f34a7355%3A0x2680d63a6f7e33c2!2sLover%20Point!5e1!3m2!1sen!2sth!4v1692722771770!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-4 col-12 me-auto">
+                                <em class="text-white d-block mb-4">Where to find us?</em>
+
+                                <strong class="text-white">
+                                    <i class="bi-geo-alt me-2"></i>
+                                    1440 Lawrence Ave. West, Toronto, Ontario, Canada
+                                </strong>
+
+                                
+                            </div>
+
+                            <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
+                                <em class="text-white d-block mb-4">Contact</em>
+
+                                <p class="d-flex mb-1">
+                                    <strong class="me-2">Phone:</strong>
+                                    <a href="tel: 305-240-9671" class="site-footer-link">
+                                        123123123
+                                    </a>
+                                </p>
+
+                                <p class="d-flex">
+                                    <strong class="me-2">Email:</strong>
+
+                                    <a> knockagency@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+
+
+                            <div class="col-lg-5 col-12">
+                                <em class="text-white d-block mb-4">Opening Hours.</em>
+
+                                <ul class="opening-hours-list">
+                                    <li class="d-flex">
+                                        Monday - Friday
+                                        <span class="underline"></span>
+
+                                        <strong>9:00 - 18:00</strong>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        Saturday
+                                        <span class="underline"></span>
+
+                                        <strong>11:00 - 16:30</strong>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        Sunday
+                                        <span class="underline"></span>
+
+                                        <strong>Closed</strong>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-8 col-12 mt-4">
+                                <p class="copyright-text mb-0">Copyright 2026s</p>
+                            </div>
+                    </div>
+                </footer>
+            </main>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/vegas.min.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>
