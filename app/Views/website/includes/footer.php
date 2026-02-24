@@ -7,7 +7,7 @@
 
                     <strong class="text-white">
                         <i class="bi-geo-alt me-2"></i>
-                        1440 Lawrence Ave. West, Toronto, Ontario, Canada
+                        <?=$abouts['address'];?>
                     </strong>
 
                     
@@ -19,14 +19,14 @@
                     <p class="d-flex mb-1">
                         <strong class="me-2">Phone:</strong>
                         <a href="tel: 305-240-9671" class="site-footer-link">
-                            123123123
+                            <?=$abouts['contact'];?>
                         </a>
                     </p>
 
                     <p class="d-flex">
                         <strong class="me-2">Email:</strong>
 
-                        <a> knockagency@gmail.com
+                        <a> <?=$abouts['email'];?>
                         </a>
                     </p>
                 </div>
@@ -34,29 +34,7 @@
 
                 <div class="col-lg-5 col-12">
                     <em class="text-white d-block mb-4">Opening Hours.</em>
-
-                    <ul class="opening-hours-list">
-                        <li class="d-flex">
-                            Monday - Friday
-                            <span class="underline"></span>
-
-                            <strong>9:00 - 18:00</strong>
-                        </li>
-
-                        <li class="d-flex">
-                            Saturday
-                            <span class="underline"></span>
-
-                            <strong>11:00 - 16:30</strong>
-                        </li>
-
-                        <li class="d-flex">
-                            Sunday
-                            <span class="underline"></span>
-
-                            <strong>Closed</strong>
-                        </li>
-                    </ul>
+                    <?=nl2br($abouts['operation_hours'])?>
                 </div>
 
                 <div class="col-lg-8 col-12 mt-4">

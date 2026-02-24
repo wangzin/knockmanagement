@@ -8,17 +8,7 @@
       $(".navbar-collapse").collapse('hide');
     });
 
-    $(function() {
-      $('.hero-slides').vegas({
-          slides: [
-              { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d' },
-              { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c' },
-              { src: 'images/young-female-barista-wear-face-mask-serving-take-away-hot-coffee-paper-cup-consumer-cafe.jpg' }
-          ],
-          timer: false,
-          animation: 'kenburns',
-      });
-    });
+    
     
     // CUSTOM LINK
     $('.smoothscroll').click(function(){

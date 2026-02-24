@@ -3,18 +3,23 @@
         <div class="row align-items-center">
 
             <div class="col-lg-6 col-12 mx-auto">
-                <h2 class="text-white">Knock Management </h2>
+                <h2 class="text-white"><?=$abouts['slider_title']?> </h2>
 
                 <p class="text-white mb-4 pb-lg-2 team-block-wrap pt-3">
-                    <b>Professional Commercial Cleaning & Janitorial Services in Toronto</b>
+                    <b><?=$abouts['slider_details']?></b>
                 </p>
-
             </div>
-
         </div>
     </div>
-
-    <div class="hero-slides"></div>
+    <?php if($abouts['slider_type']=="video"){?>
+        <div class="carousel-item swiper-slide">
+            <video autoplay loop muted playsinline>
+                <source src="<?php echo base_url();?>images/sliders/<?=$abouts['video_slider']?>" type="video/mp4">
+            </video>
+        </div>
+    <?php } ?>
+        <input type="hidden" name="slider_1" id="slider_1" value="<?=$slider_data_1?>">
+        <div class="hero-slides"></div>
 </section>
 
 <section class="about-section section-padding" id="section_2">
@@ -24,65 +29,41 @@
             <div class="col-lg-6 col-12">
                 <div class="ratio ratio-1x1">
                     <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                        <source src="videos/pexels-mike-jones-9046237.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                        <source src="<?php echo base_url();?>images/about/<?=$abouts['about_video'];?>" type="video/mp4">
                     </video> 
 
                     <div class="about-video-info d-flex flex-column">
-                        <h4 class="mt-auto">We Started Since 2018.</h4>
-                        <h4>Best staffing in Toronto.</h4>
+                        <h4 class="mt-auto"><?=$abouts['welcome_note'];?></h4>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-5 col-12 mt-4 mt-lg-0 mx-auto">
-                <h2 class="text-white mb-3">Knock Management</h2>
-                <p class="text-white">Knock Management is a dynamic new enterprise offering integrated operational support and resource solutions. We address critical, everyday challenges for businesses by providing reliable staffing, specialized cleaning services, and plans for sustainable agricultural production. Our mission is to be a versatile partner that enhances our clients' operational efficiency, cleanliness, and resource stability. This plan details our phased strategy to launch and scale our core service lines, establish a strong market presence, and build a financially sustainable company poised for growth.</p>
+                <h2 class="text-white mb-3"><?=$abouts['org_name'];?></h2>
+                <p class="text-white"><?=$abouts['about'];?></p>
                 <a href="#" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Read More</a>
                 <a href="reservation.html" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Free consultation</a>
             </div>
-
         </div>
     </div>
 </section>
-<section class="section-padding" id="section_industries">
+<section class="section-padding" id="section_3">
     <div class="container">
         <div class="row">
-
             <div class="col-lg-12 col-12 text-center">
-                <h2 class="mb-5">Industries We Serve</h2>
+                <h2 class="mb-5">Our Future Services</h2>
             </div>
-
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="custom-block-wrap">
-                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" class="custom-block-image img-fluid" alt="Retail and Office">
-                    <div class="custom-block">
-                        <h4 class="mt-3">Retail & Professional</h4>
-                        <p class="mb-0">Prisinte cleaning for banks, retail stores, and professional offices to ensure a premium client experience.</p>
+            <?php if($services!=null && sizeof($services)>0){ 
+                foreach($services as $i=> $dat): ?>
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="custom-block-wrap">
+                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block-image img-fluid" alt="Retail and Office">
+                        <div class="custom-block">
+                            <h4 class="mt-3"><?=$dat['name'];?></h4>
+                            <p class="mb-0"><?=$dat['description'];?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="custom-block-wrap">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" class="custom-block-image img-fluid" alt="Industrial Facility">
-                    <div class="custom-block">
-                        <h4 class="mt-3">Industrial & Manufacturing</h4>
-                        <p class="mb-0">Reliable staffing solutions for light industrial factories and manufacturing plants across the GTA.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="custom-block-wrap">
-                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=800&q=80" class="custom-block-image img-fluid" alt="Local Farming">
-                    <div class="custom-block">
-                        <h4 class="mt-3">Agriculture & Local Farms</h4>
-                        <p class="mb-0">Supporting local farms with seasonal staffing and developing sustainable agricultural production.</p>
-                    </div>
-                </div>
-            </div>
-
+            <?php endforeach; }?>
         </div>
     </div>
 </section>
@@ -94,74 +75,17 @@
             <div class="col-lg-12 col-12 text-center">
                 <h2 class="mb-5">Why Choose Knock Management?</h2>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <div class="icon-box mb-3">
-                        <i class="bi-shield-check"></i>
+            <?php if($excellence!=null && sizeof($excellence)>0){ 
+                foreach($excellence as $i=> $dat): ?>
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <div class="why-choose-item text-center">
+                        <img decoding="async" width="105" height="105" src="<?php echo base_url();?>images/excellancy/<?=$dat['image'];?>" data-src="<?php echo base_url();?>images/excellancy/<?=$dat['image'];?>" alt="Proven Experience" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3539 entered loaded et-animated" data-ll-status="loaded">
+                        <h5><?=$dat['name'];?></h5>
+                        <p><?=$dat['description'];?></p>
                     </div>
-                    <h5>Proven Reliability</h5>
-                    <p>We solve the pain point of inconsistent quality by implementing strict operational protocols.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <div class="icon-box mb-3">
-                        <i class="bi-gear-wide-connected"></i>
-                    </div>
-                    <h5>Integrated Solutions</h5>
-                    <p>From commercial cleaning to industrial staffing, we provide a single point of contact for your operations.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <div class="icon-box mb-3">
-                        <i class="bi-geo-alt"></i>
-                    </div>
-                    <h5>GTA Expertise</h5>
-                    <p>Headquartered in Toronto, we understand the local market needs of SMBs across the Greater Toronto Area.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <div class="icon-box mb-3">
-                        <i class="bi-flower1"></i>
-                    </div>
-                    <h5>Sustainable Growth</h5>
-                    <p>Our unique "Knock Grow" initiative ensures we grow alongside the community through sustainable practices.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/dswa.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/dswa.png" alt="Proven Experience" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3539 entered loaded et-animated" data-ll-status="loaded">
-                    <h5>Proven Experience</h5>
-                    <p>30+ years in the commercial cleaning industry and 500+ satisfied clients across the GTA.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/fs.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/fs.png" alt="Professional &amp; Reliable Team" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3540 entered loaded et-animated" data-ll-status="loaded">
-                    <h5>Professional & Reliable Team</h5>
-                    <p>Fully trained, insured, and background-checked staff dedicated to quality and consistency.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/udtcyh.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/udtcyh.png" alt="Eco-Friendly Approach" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3542 entered loaded et-animated" data-ll-status="loaded">
-                    <h5>Eco-Friendly Approach</h5>
-                    <p>We use advanced, environmentally safe products and modern equipment for a cleaner, healthier workspace.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="why-choose-item text-center">
-                    <img decoding="async" width="105" height="105" src="https://mcagroup.ca/wp-content/uploads/2025/10/xgfd.png" data-src="https://mcagroup.ca/wp-content/uploads/2025/10/xgfd.png" alt="Guaranteed Quality" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3544 entered loaded et-animated" data-ll-status="loaded">
-                    <h5>Insured and Bonded and Guaranteed Quality</h5>
-                    <p>Regular inspections and a satisfaction guarantee ensure every job meets the highest standards.</p>
-                </div>
-            </div>
+            <?php endforeach; }?>
+            
             <div class="container text-center mt-4">
                 <p class="lead">Ready to stabilize your business operations?</p>
                 <a href="#section_5" class="btn custom-btn">Request a Free Quote</a>
@@ -177,50 +101,27 @@
                 <h2 class="mb-5 text-white">Our Cleaning Process</h2>
                 <p class="mb-5 text-white">Our systematic approach ensures that every facility we manage meets the highest standards of cleanliness and hygiene.</p>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="process-card">
-                    <div class="process-icon">
-                    <img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-21-1.png" data-src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-21-1.png" alt="Site Assessment &amp; Planning" >
+             <?php if($processdata!=null && sizeof($processdata)>0){ 
+                foreach($processdata as $i=> $dat): ?>
+                <?php if(sizeof($processdata)==1){?>
+                    <div class="col-lg-12 col-md-12 col-12 mb-4">
+                <?php } if(sizeof($processdata)==2){?>
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                <?php } if(sizeof($processdata)==3){?>
+                    <div class="col-lg-4 col-md-4 col-12 mb-4">
+                <?php } if(sizeof($processdata)>=4){?>
+                    <div class="col-lg-3 col-md-6 col-12 mb-4">
+                <?php }?>
+                    <div class="process-card">
+                        <div class="process-icon">
+                        <img decoding="async" width="100" height="100" src="<?php echo base_url();?>images/cleaningprocess/<?=$dat['image'];?>" data-src="<?php echo base_url();?>images/cleaningprocess/<?=$dat['image'];?>" alt="Site Assessment &amp; Planning" >
+                        </div>
+                        <div class="process-number"><?=$dat['sequence']<10? '0'.$dat['sequence']:$dat['sequence'];?></div>
+                        <h4><?=$dat['name'];?></h4>
+                        <p><?=$dat['description'];?></p>
                     </div>
-                    <div class="process-number">01</div>
-                    <h4>Step 1: Understanding Your Requirements</h4>
-                    <p>We start by talking to the client and understanding the size, type, and frequency of cleaning needed. This ensures the service is tailored to their facility.</p>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="process-card">
-                    <div class="process-icon">
-                    <img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-10-1.png" >
-                    </div>
-                    <div class="process-number">02</div>
-                    <h4>Step 2: Customized Cleaning Plan</h4>
-                    <p>Based on the requirements, we create a personalized cleaning plan that fits the client’s schedule, facility type, and unique needs.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="process-card">
-                    <div class="process-icon">
-                    <img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-9-1.png" >
-                    </div>
-                    <div class="process-number">03</div>
-                    <h4>Step 3: Professional Cleaning Service</h4>
-                    <p>Our trained technicians carry out the cleaning using professional equipment and methods, following the customized plan to ensure consistent quality.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                <div class="process-card">
-                    <div class="process-icon">
-                    <img decoding="async" width="100" height="100" src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-8-1.png" >
-                    </div>
-                    <div class="process-number">04</div>
-                    <h4>Step 4: Quality Check & Ongoing Support</h4>
-                    <p>After each service, we check the results, gather client feedback, and provide ongoing support to ensure satisfaction and long-term service reliability.</p>
-                </div>
-            </div>
+            <?php endforeach; }?>
 
         </div>
     </div>

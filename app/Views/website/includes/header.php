@@ -4,6 +4,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Knock Management</title>
+        <link rel="shortcut icon" href="<?php echo base_url();?>images/<?=$abouts['logo'];?>" type="image/png">
         <!-- CSS FILES -->                
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
