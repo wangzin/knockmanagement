@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">                
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="/">
+        <a class="navbar-brand align-items-center" href="/">
             <img src="<?php echo base_url();?>images/<?=$abouts['logo'];?>" class="navbar-brand-image img-fluid" alt="Barista Cafe Template">
         </a>
 
@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_1">Home</a>
+                    <a class="nav-link click-scroll" href="/">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -23,7 +23,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                    <a class="nav-link click-scroll" href="<?=base_url()?>2dcf222ffff3bbd2823d0226ef789985cf237c96/593007a44c17141aef5bc2585c4a7497ecee5243">Contact</a>
                 </li>
             </ul>
 

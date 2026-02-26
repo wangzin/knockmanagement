@@ -93,7 +93,7 @@
 						<input class="pad" name="image2" id="image2" type="file"/>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-						<label>Image 3: </label>
+						<label>Image 3(form background): </label>
 						<?php if($data['image3']!=""){;?>
 							<br>
 							<img  src="<?php echo base_url();?>images/about/<?=$data['image3'];?>" width="150" class="img-text">

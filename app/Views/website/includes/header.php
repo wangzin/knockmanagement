@@ -14,7 +14,7 @@
         <link href="<?php echo base_url();?>assets/css/bootstrap-icons.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets/css/vegas.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets/css/tooplate-barista.css" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         .sticky-social-sidebar {
             position: fixed;
@@ -168,6 +168,45 @@
             padding: 50px 0;
             color: white;
             overflow: hidden;
+        }
+        .checkbox-padding-right{
+            padding-right: 21px;
+        }
+        .margin-bottom-30{
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            margin-top: 25px;
+        }
+
+        .info-box h5 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .info-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            background: #E8D8C3;
+            color: #6F4E37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .info-box:hover .icon {
+            background: #C58940;
+            color: #fff;
         }
     </style>
 </head>

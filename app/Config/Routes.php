@@ -12,6 +12,8 @@ $routes->get('/', 'WebsiteController::index');
 $routes->group('2dcf222ffff3bbd2823d0226ef789985cf237c96', function ($routes) {
     $routes->get('593007a44c17141aef5bc2585c4a7497ecee5243', 'WebsiteController::quote_page');
     $routes->get('593007a44c17141aef5bc2335c4a7497ecee5243', 'WebsiteController::register_page');
+    $routes->get('593007a44c17141aef5bc2665c4a7497ecee5243', 'WebsiteController::about_page');
+    $routes->post('b4f4e15482b71648b505ba1e55ee43cbbe6473b0', 'WebsiteController::submit_registration');
 });
 
 //Administration

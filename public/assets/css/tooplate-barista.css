@@ -798,7 +798,6 @@ strong {
   BOOKING SECTION              
 -----------------------------------------*/
 .booking-section {
-  background-image: url('../images/young-female-barista-wear-face-mask-serving-take-away-hot-coffee-paper-cup-consumer-cafe.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -903,7 +902,7 @@ strong {
 .custom-form .form-control {
   color: var(--p-color);
   border-radius: var(--border-radius-small);
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   padding-top: 13px;
   padding-bottom: 13px;
   box-shadow: none;
