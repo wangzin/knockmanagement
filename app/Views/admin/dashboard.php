@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?=$abouts['org_name']?></title>
+        <title>Commercial Cleaning Services in Toronto |  <?=$abouts['org_name']?></title>
+        <meta name="description" content="Knock Management is a professional cleaning company in Toronto offering commercial, office and janitorial cleaning services. Get a free quote today.">
         <link rel="shortcut icon" href="<?php echo base_url();?>images/<?=$abouts['logo'];?>" type="image/png">
         <!-- <link rel="icon" href="<?php echo base_url();?>images/<?=$abouts['logo']?>" type="image/x-icon" /> -->
         <link rel="stylesheet" href="<?php echo base_url();?>admin/bower_components/bootstrap/dist/css/bootstrap.min.css" />
@@ -53,6 +54,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
     <script>
        
         $(function () {

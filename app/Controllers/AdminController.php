@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\AboutModel;
 use App\Models\CleaningProcess;
+use App\Models\CleaningServices;
 use App\Models\Excellence;
 use App\Models\MenuModel;
 use App\Models\Services;
@@ -345,6 +346,64 @@ class AdminController extends BaseController
         return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/e9883d615ca4a5bc0d3d3c91afe2d881');
     }
 
+    //Cleaning Services 
+    public function load_cleaning_services_page(){
+        $data=$this->getgeneraldata();
+        $dataModel = new CleaningServices();
+        $data['data'] = $dataModel->findAll();
+        $data['max_seq'] = ($dataModel->selectMax('sequence')->first()['sequence'])+1;
+        session()->setFlashdata('page', 'admin/pages/website/manage_cleaning_services');
+        return view('admin/dashboard',$data);
+    }
+    public function save_cleaning_services_details(){
+        $dataModel = new CleaningServices();
+        if($this->request->getVar('name')!=null){
+            $image_path=$this->request->getVar('imageid');
+            if($_FILES["image"]["name"]!="" && !empty($_FILES["image"]["name"])){
+                $fle=$this->image_base_path.'services/'.$this->request->getVar('imageid');
+                if ($this->request->getVar('imageid')!="" && file_exists($fle)){
+                    unlink($fle);
+                }
+                move_uploaded_file($_FILES['image']['tmp_name'],$this->image_base_path.'services/'.time().$_FILES["image"]["name"]);
+                $image_path=time().$_FILES["image"]["name"];
+            }
+            $update_data = [
+                'name'  => $this->request->getVar('name'),
+                'sequence'  => $this->request->getVar('sequence'),
+                'description'  => $this->request->getVar('description'),
+                'details'  => $this->request->getVar('details'),
+                'image'  =>$image_path,
+            ];
+            if($this->request->getVar('action_type')=="add"){
+                $update_data = $update_data +['created_at' => date('Y-m-d h:i:sa')];
+                $dataModel->insert($update_data);
+                session()->setFlashdata('message', 'Cleaning services details has been added successfully. Thank you');
+            }
+            if($this->request->getVar('action_type')=="edit"){
+                $update_data = $update_data +['updated_at' => date('Y-m-d h:i:sa')];
+                $dataModel->update($this->request->getVar('record_id'),$update_data);
+                session()->setFlashdata('message', 'Cleaning services details has been updated successfully. Thank you');
+            }
+        }
+        return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/2ade8118c7e58315ea0ad1ee121e7256');
+    }
+    public function get_cleaning_services_by_id($id){
+        $dataModel = new CleaningServices();
+        $data = $dataModel->where('id', $id)->first();
+        return json_encode($data);
+    }
+    public function delete_cleaning_services_details(){
+        $dataModel = new CleaningServices();
+        $fle=$this->image_base_path.'services/'.$this->request->getVar('imageid');
+        if ($this->request->getVar('imageid')!="" && file_exists($fle)){
+            unlink($fle);
+        }
+        $dataModel->delete($this->request->getVar('record_id'));
+        session()->setFlashdata('message', 'Cleaning services detail has been deleted successfully. Thank you');
+        return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/2ade8118c7e58315ea0ad1ee121e7256');
+    }
+
+
     //Services 
     public function load_services_page(){
         $data=$this->getgeneraldata();
@@ -398,7 +457,7 @@ class AdminController extends BaseController
             unlink($fle);
         }
         $dataModel->delete($this->request->getVar('record_id'));
-        session()->setFlashdata('message', 'Event detail has been deleted successfully. Thank you');
+        session()->setFlashdata('message', 'Services detail has been deleted successfully. Thank you');
         return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/2ade8118c7e58315ea0ad1ee121e7297');
     }
 

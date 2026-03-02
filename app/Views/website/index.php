@@ -22,7 +22,9 @@
         <script src="<?php echo base_url();?>assets/js/custom.js"></script>
         <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+       
         <script>
+            
             <?php if(session()->getFlashdata('messagedanger')):?>
                 Swal.fire({
                     icon: "error",
@@ -186,5 +188,21 @@
             }
             
         </script>
+         <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Knock Management",
+            "image": "https://knockmanagement.ca/logo.png",
+            "telephone": "+1-XXX-XXX-XXXX",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Toronto",
+                "addressRegion": "ON",
+                "addressCountry": "CA"
+            },
+            "areaServed": "Toronto"
+            }
+            </script>
     </body>
 </html>

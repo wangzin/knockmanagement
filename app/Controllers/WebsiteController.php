@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\AboutModel;
 use App\Models\CleaningProcess;
+use App\Models\CleaningServices;
 use App\Models\Excellence;
 use App\Models\QuoteModel;
 use App\Models\RegistrationModel;
@@ -35,6 +36,8 @@ class WebsiteController extends BaseController
         $data['processdata']=$cleaningprocess->orderBy('sequence','ASC')->findAll();
         $excellancyModel = new Excellence();
         $data['excellence']=$excellancyModel->orderBy('sequence','ASC')->findAll();
+        $cleaningservicemodel = new CleaningServices();
+        $data['cleaningservices']=$cleaningservicemodel->orderBy('sequence','ASC')->findAll();
         $servicemodel = new Services();
         $data['services']=$servicemodel->orderBy('sequence','ASC')->findAll();
         $data['page_name'] = 'home_page';
@@ -57,6 +60,13 @@ class WebsiteController extends BaseController
             $response=json_decode($verify_response);
             if($response->success){
                 if($this->request->getVar('form_type')=='registration'){
+                    $validate_email=$this->validate([
+                        'email' => 'required|valid_email|is_unique[registrations.email]',
+                    ]);
+                    if(!$validate_email){
+                        session()->setFlashdata('messagedanger', 'Your email is already registered with us. Please wait for our contact.');
+                        return redirect()->to('/');
+                    }
                     $image_path=$this->request->getVar('resume');
                     if($_FILES["resume"]["name"]!="" && !empty($_FILES["resume"]["name"])){
                         move_uploaded_file($_FILES['resume']['tmp_name'],'attachment/'.time().$_FILES["resume"]["name"]);

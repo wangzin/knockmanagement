@@ -19,11 +19,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_3">Our Services</a>
+                    <a class="nav-link click-scroll" href="#section_futureservice">Future Services</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="<?=base_url()?>2dcf222ffff3bbd2823d0226ef789985cf237c96/593007a44c17141aef5bc2585c4a7497ecee5243">Contact</a>
+                    <a class="nav-link" href="<?=base_url()?>2dcf222ffff3bbd2823d0226ef789985cf237c96/593007a44c17141aef5bc2585c4a7497ecee5243">Contact</a>
                 </li>
             </ul>
 

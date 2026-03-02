@@ -3,7 +3,7 @@
         <div class="row align-items-center">
 
             <div class="col-lg-6 col-12 mx-auto">
-                <h2 class="text-white"><?=$abouts['slider_title']?> </h2>
+                <h1 class="text-white" style="font-size: 50px;"><?=$abouts['slider_title']?> </h1>
 
                 <p class="text-white mb-4 pb-lg-2 team-block-wrap pt-3">
                     <b><?=$abouts['slider_details']?></b>
@@ -51,13 +51,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-12 text-center">
-                <h2 class="mb-5">Our Future Services</h2>
+                <h2 class="mb-5">Our Cleaning Services</h2>
             </div>
-            <?php if($services!=null && sizeof($services)>0){ 
-                foreach($services as $i=> $dat): ?>
+            <?php if($cleaningservices!=null && sizeof($cleaningservices)>0){ 
+                foreach($cleaningservices as $i=> $dat): ?>
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
                     <div class="custom-block-wrap">
-                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block-image img-fluid" alt="Retail and Office">
+                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block img-fluid" alt="Retail and Office">
                         <div class="custom-block">
                             <h4 class="mt-3"><?=$dat['name'];?></h4>
                             <p class="mb-0"><?=$dat['description'];?></p>
@@ -124,6 +124,28 @@
                 </div>
             <?php endforeach; }?>
 
+        </div>
+    </div>
+</section>
+
+<section class="section-padding" id="section_futureservice">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12 text-center">
+                <h2 class="mb-5">Our Future Services</h2>
+            </div>
+            <?php if($services!=null && sizeof($services)>0){ 
+                foreach($services as $i=> $dat): ?>
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="custom-block-wrap">
+                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block-image img-fluid" alt="Retail and Office">
+                        <div class="custom-block">
+                            <h4 class="mt-3"><?=$dat['name'];?></h4>
+                            <p class="mb-0"><?=$dat['description'];?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; }?>
         </div>
     </div>
 </section>

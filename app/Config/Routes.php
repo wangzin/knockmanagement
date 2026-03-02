@@ -60,6 +60,11 @@ $routes->group('529288ce6f5efcd3a2f57dea8f48fb4131f90c3e',['filter' => 'authGuar
     $routes->get('998dcb8c3a48509268b92532f247b244/(:num)', 'AdminController::get_services_by_id/$1');
     $routes->post('2346265cc0cdd0977eeacc481987ed1c', 'AdminController::delete_services_detials');
 
+    $routes->get('2ade8118c7e58315ea0ad1ee121e7256', 'AdminController::load_cleaning_services_page');
+    $routes->post('f82f14bcb55ca6da880d182cee0c9123', 'AdminController::save_cleaning_services_details');
+    $routes->get('998dcb8c3a48509268b92532f247b123/(:num)', 'AdminController::get_cleaning_services_by_id/$1');
+    $routes->post('2346265cc0cdd0977eeacc481987e123', 'AdminController::delete_cleaning_services_details');
+
     $routes->get('866f61182ded2296d8d73bcbe8e24380', 'AdminController::load_excellancy_page');
     $routes->post('9b4782210240dabe1ec496b29958f0b4', 'AdminController::save_excellancy_details');
     $routes->get('2d46ce35ca107546bcfaa0c995da6099/(:num)', 'AdminController::get_excellancy_by_id/$1');

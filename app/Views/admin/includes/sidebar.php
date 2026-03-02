@@ -39,11 +39,16 @@
                         <span>Manage Sliders</span>
                     </a>
                 </li>
-               
+               <li>
+                    <a href="/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/2ade8118c7e58315ea0ad1ee121e7256">
+                        <i class="fa fa-laptop"></i>
+                        <span>Manage Cleaning Services</span>
+                    </a>
+                </li>
                 <li>
                     <a href="/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/2ade8118c7e58315ea0ad1ee121e7297">
                         <i class="fa fa-laptop"></i>
-                        <span>Manage Services</span>
+                        <span>Manage Future Services</span>
                     </a>
                 </li>
                 <li>

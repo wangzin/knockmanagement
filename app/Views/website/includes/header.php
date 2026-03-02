@@ -1,9 +1,9 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
+        <meta name="description" content="Knock Management is a professional cleaning company in Toronto offering commercial, office and janitorial cleaning services. Get a free quote today.">
         <meta name="author" content="">
-        <title>Knock Management</title>
+        <title>Commercial Cleaning Services in Toronto |  <?=$abouts['org_name']?></title>
         <link rel="shortcut icon" href="<?php echo base_url();?>images/<?=$abouts['logo'];?>" type="image/png">
         <!-- CSS FILES -->                
         <link rel="preconnect" href="https://fonts.googleapis.com">
