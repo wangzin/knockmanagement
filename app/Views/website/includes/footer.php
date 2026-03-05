@@ -33,7 +33,7 @@
                 </div>
 
 
-                <div class="col-lg-5 col-12">
+                <div class="col-lg-5 col-12 map-wrapper">
                     <?=$abouts['location_map'];?>
                 </div>
 

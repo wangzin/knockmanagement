@@ -70,6 +70,8 @@ class WebsiteController extends BaseController
                     $image_path=$this->request->getVar('resume');
                     if($_FILES["resume"]["name"]!="" && !empty($_FILES["resume"]["name"])){
                         move_uploaded_file($_FILES['resume']['tmp_name'],'attachment/'.time().$_FILES["resume"]["name"]);
+                        //production
+                        //    move_uploaded_file($_FILES['resume']['tmp_name'],'public/attachment/'.time().$_FILES["resume"]["name"]);
                         $image_path=time().$_FILES["resume"]["name"];
                     }
                     $form_data=[

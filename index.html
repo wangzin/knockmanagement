@@ -34,6 +34,10 @@ https://www.tooplate.com/view/2137-barista-cafe
 Bootstrap 5 HTML CSS Template
 
 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+
 <style>
 .sticky-social-sidebar {
     position: fixed;
@@ -187,6 +191,47 @@ Bootstrap 5 HTML CSS Template
     padding: 50px 0;
     color: white;
     overflow: hidden;
+}
+
+
+
+
+.testimonial-section {
+    background: #f8f6f2;
+}
+
+.testimonial-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.testimonial-item .client-img img {
+    border: 3px solid #eee;
+}
+
+.testimonial-item .client-name {
+    font-weight: 600;
+    margin: .5rem 0;
+    color: #333;
+}
+
+.testimonial-item p {
+    font-size: .95rem;
+    color: #555;
+}
+
+.owl-nav button {
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 12px;
+    margin-top: -30px;
+}
+
+.owl-nav button:hover {
+    background: #000;
 }
 </style>
     </head>
@@ -521,6 +566,83 @@ Bootstrap 5 HTML CSS Template
                     </div>
                 </section>
 
+               <section class="testimonial-section py-5">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <h2 class="section-title">What Our Happy Clients Say</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-12">
+                                <!-- Google Summary Box -->
+                                <div class="testimonial-item google-box p-4 text-center">
+                                    <h5>Pro-Clean Janitorial Services</h5>
+                                    <div class="rating my-2">
+                                        <span class="score">4.9</span>
+                                        <span class="stars text-warning">★★★★★</span>
+                                    </div>
+                                    <p class="small">Based on 27 reviews</p>
+                                    <button class="btn btn-success btn-sm">Review on Google</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-12">
+                                <div class="testimonial-slider owl-carousel owl-theme">
+                            <!-- Testimonial 1 -->
+                            <div class="testimonial-item p-4">
+                                <div class="client-img mb-2">
+                                    <img src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-8-1.png" alt="Stephanie A" class="rounded-circle" width="80">
+                                </div>
+                                <h6 class="client-name">Stephanie A</h6>
+                                <div class="stars text-warning mb-2">★★★★★</div>
+                                <p>
+                                    We've been through several cleaning companies and Pro-Clean by far is the best! Excellent services!
+                                </p>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="testimonial-item p-4">
+                                <div class="client-img mb-2">
+                                    <img src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-8-1.png" alt="Sangeetha" class="rounded-circle" width="80">
+                                </div>
+                                <h6 class="client-name">Sangeetha Suwarnan</h6>
+                                <div class="stars text-warning mb-2">★★★★★</div>
+                                <p>
+                                    Great office cleaning company with good prices and service!
+                                </p>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="testimonial-item p-4">
+                                <div class="client-img mb-2">
+                                    <img src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-8-1.png" alt="Marc" class="rounded-circle" width="80">
+                                </div>
+                                <h6 class="client-name">Marc Robitaille</h6>
+                                <div class="stars text-warning mb-2">★★★★★</div>
+                                <p>
+                                    Excellent work. Punctual & friendly staff. Would highly recommend!
+                                </p>
+                            </div>
+
+                            <!-- Testimonial 4 -->
+                            <div class="testimonial-item p-4">
+                                <div class="client-img mb-2">
+                                    <img src="https://mcagroup.ca/wp-content/uploads/2026/01/MCA-8-1.png" alt="Rachel Levman" class="rounded-circle" width="80">
+                                </div>
+                                <h6 class="client-name">Rachel Levman</h6>
+                                <div class="stars text-warning mb-2">★★★★★</div>
+                                <p>
+                                    Best cleaning company to work with!
+                                </p>
+                            </div>
+
+                        </div>
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+                </section>
+
 
                 <footer class="site-footer">
                     <div class="container">
@@ -597,6 +719,26 @@ Bootstrap 5 HTML CSS Template
         <script src="public/assets/js/click-scroll.js"></script>
         <script src="public/assets/js/vegas.min.js"></script>
         <script src="public/assets/js/custom.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".testimonial-slider").owlCarousel({
+                    loop:true,
+                    margin:30,
+                    autoplay:true,
+                    autoplayTimeout:4000,
+                    autoplayHoverPause:true,
+                    dots:true,
+                    nav:true,
+                    navText: ["<", ">"],
+                    responsive:{
+                        0:{ items:1 },
+                        768:{ items:2 },
+                        992:{ items:3 }
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

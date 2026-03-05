@@ -8,6 +8,8 @@ use App\Models\CleaningProcess;
 use App\Models\CleaningServices;
 use App\Models\Excellence;
 use App\Models\MenuModel;
+use App\Models\QuoteModel;
+use App\Models\RegistrationModel;
 use App\Models\Services;
 use App\Models\Slider;
 use Exception;
@@ -15,12 +17,15 @@ use Exception;
 class AdminController extends BaseController
 {
     private $image_base_path;
-    private $_image_path;
+    private $_image_path; 
     protected $db;
     public function __construct(){
         $this->db=db_connect();
         $this->image_base_path='images/';
         $this->_image_path='images/about/';
+         //production
+        //  $this->image_base_path='public/images/';
+        // $this->_image_path='public/images/about/';
     }
     private function getgeneraldata(){
         $data=null;
@@ -573,6 +578,34 @@ class AdminController extends BaseController
         $dataModel->delete($this->request->getVar('record_id'));
         session()->setFlashdata('message', 'Cleaning Process detail has been deleted successfully. Thank you');
         return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/9ed6280103d930c543274dcb46af1fa9');
+    }
+
+    public function load_application_page(){
+        $data=$this->getgeneraldata();
+        $dataModel = new RegistrationModel();
+        $data['data'] = $dataModel->findAll();
+        session()->setFlashdata('page', 'admin/pages/registration_page');
+        return view('admin/dashboard',$data);
+    }
+
+    public function get_registration_by_id($id){
+        $dataModel = new RegistrationModel();
+        $data = $dataModel->where('id', $id)->first();
+        return json_encode($data);
+    }
+
+    public function load_quote_page(){
+        $data=$this->getgeneraldata();
+        $dataModel = new QuoteModel();
+        $data['data'] = $dataModel->findAll();
+        session()->setFlashdata('page', 'admin/pages/quote_page');
+        return view('admin/dashboard',$data);
+    }
+    
+    public function get_quote_by_id($id){
+        $dataModel = new QuoteModel();
+        $data = $dataModel->where('id', $id)->first();
+        return json_encode($data);
     }
 
     

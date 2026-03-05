@@ -1,9 +1,9 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Knock Management is a professional cleaning company in Toronto offering commercial, office and janitorial cleaning services. Get a free quote today.">
+        <meta name="description" content="Knock Management is a professional and one of the trusted cleaning company in Toronto offering commercial, office and janitorial cleaning services across the GTA.">
         <meta name="author" content="">
-        <title>Commercial Cleaning Services in Toronto |  <?=$abouts['org_name']?></title>
+        <title>Cleaning Companies in Toronto | Commercial & Residential Cleaning | Commercial Cleaning Services in Toronto |  <?=$abouts['org_name']?></title>
         <link rel="shortcut icon" href="<?php echo base_url();?>images/<?=$abouts['logo'];?>" type="image/png">
         <!-- CSS FILES -->                
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,9 @@
         <link href="<?php echo base_url();?>assets/css/vegas.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets/css/tooplate-barista.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- for testimonial -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
     <style>
         .sticky-social-sidebar {
             position: fixed;
@@ -208,5 +211,65 @@
             background: #C58940;
             color: #fff;
         }
+
+
+         /* <!-- for testimonial --> */
+         
+        .testimonial-section {
+            background: #f8f6f2;
+        }
+
+        .testimonial-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .testimonial-item .client-img img {
+            border: 3px solid #eee;
+        }
+
+        .testimonial-item .client-name {
+            font-weight: 600;
+            margin: .5rem 0;
+            color: #333;
+        }
+
+        .testimonial-item p {
+            font-size: .95rem;
+            color: #555;
+        }
+
+        .owl-nav button {
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            padding: 5px 12px;
+            margin-top: -30px;
+        }
+
+        .owl-nav button:hover {
+            background: #000;
+        }
+
+        .mediumradius {
+            padding: 5px;
+            position: relative;
+            border-radius: var(--border-radius-medium);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 400px; /* Desktop height */
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .map-wrapper iframe {
+                height: 250px; /* Smaller height on mobile */
+            }
+        }
+
     </style>
 </head>

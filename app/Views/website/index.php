@@ -22,6 +22,26 @@
         <script src="<?php echo base_url();?>assets/js/custom.js"></script>
         <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".testimonial-slider").owlCarousel({
+                    loop:true,
+                    margin:30,
+                    autoplay:true,
+                    autoplayTimeout:4000,
+                    autoplayHoverPause:true,
+                    dots:true,
+                    nav:true,
+                    navText: ["<", ">"],
+                    responsive:{
+                        0:{ items:1 },
+                        768:{ items:2 },
+                        992:{ items:3 }
+                    }
+                });
+            });
+        </script>
        
         <script>
             

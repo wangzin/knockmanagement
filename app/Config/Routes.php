@@ -74,5 +74,13 @@ $routes->group('529288ce6f5efcd3a2f57dea8f48fb4131f90c3e',['filter' => 'authGuar
     $routes->post('9b4783310240dabe1ec496b29958f0b4', 'AdminController::save_cleaning_process_details');
     $routes->get('2d46ce35ca103346bcfaa0c995da6099/(:num)', 'AdminController::get_cleaning_process_by_id/$1');
     $routes->post('29e9b464daf4fc9339b77667bbe8179a', 'AdminController::delete_cleaning_process_details');
+
+    
+    $routes->get('b7bf905211ea1e4a63f85a2af1c62fd6', 'AdminController::load_application_page');
+    $routes->get('e3c9b6af1b18ef41ffb8251fc19dd8c92f/(:num)', 'AdminController::get_registration_by_id/$1');
+
+    $routes->get('fbf07aaa1e5dd8afa4c62dcf40ba18ae', 'AdminController::load_quote_page');
+    $routes->get('e3c9b6af1b18ef41ffb8251fc19ddrr92f/(:num)', 'AdminController::get_quote_by_id/$1');
+    
 });
 

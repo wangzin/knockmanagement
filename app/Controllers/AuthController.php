@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\AboutModel;
+use App\Models\QuoteModel;
+use App\Models\RegistrationModel;
 use App\Models\UserModel;
 class AuthController extends BaseController
 {
@@ -57,6 +59,10 @@ class AuthController extends BaseController
         session()->setFlashdata('page', 'admin/pages/dashboard_content');
         $dataModel = new AboutModel();
         $data['abouts'] = $dataModel->first();
+        $registrationmodel=new RegistrationModel(); 
+        $data['regiatration'] = $registrationmodel->findAll();
+         $quotenmodel=new QuoteModel(); 
+        $data['quote'] = $quotenmodel->findAll();
         return view('admin/dashboard',$data);
     }
     public function password_change(){

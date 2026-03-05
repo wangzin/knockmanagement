@@ -149,3 +149,76 @@
         </div>
     </div>
 </section>
+<section class="testimonial-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">What Our Happy Clients Say</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-12">
+                <!-- Google Summary Box -->
+                <div class="testimonial-item google-box p-4 text-center">
+                    <h5>Knock Managemement Services</h5>
+                    <div class="rating my-2">
+                        <span class="score">4.9</span>
+                        <span class="stars text-warning">★★★★★</span>
+                    </div>
+                    <p class="small">Based on 27 reviews</p>
+                    <button class="btn btn-success btn-sm">Review on Google</button>
+                </div>
+            </div>
+            <div class="col-lg-8 col-12">
+                <div class="testimonial-slider owl-carousel owl-theme">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item p-4">
+                        <div class="client-img mb-2">
+                            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Stephanie A" class="rounded-circle" width="80">
+                        </div>
+                        <h6 class="client-name">Stephanie A</h6>
+                        <div class="stars text-warning mb-2">★★★★★</div>
+                        <p>
+                            We've been through several cleaning companies and Pro-Clean by far is the best! Excellent services!
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item p-4">
+                        <div class="client-img mb-2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Sangeetha" class="rounded-circle" width="80">
+                        </div>
+                        <h6 class="client-name">Sangeetha Suwarnan</h6>
+                        <div class="stars text-warning mb-2">★★★★★</div>
+                        <p>
+                            Great office cleaning company with good prices and service!
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-item p-4">
+                        <div class="client-img mb-2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Marc" class="rounded-circle" width="80">
+                        </div>
+                        <h6 class="client-name">Marc Robitaille</h6>
+                        <div class="stars text-warning mb-2">★★★★★</div>
+                        <p>
+                            Excellent work. Punctual & friendly staff. Would highly recommend!
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-item p-4">
+                        <div class="client-img mb-2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Rachel Levman" class="rounded-circle" width="80">
+                        </div>
+                        <h6 class="client-name">Rachel Levman</h6>
+                        <div class="stars text-warning mb-2">★★★★★</div>
+                        <p>
+                            Best cleaning company to work with!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
