@@ -28,7 +28,7 @@ class Email extends BaseConfig
     /**
      * SMTP Server Hostname
      */
-    public string $SMTPHost = 'smtpout.secureserver.net';
+    public string $SMTPHost = '';//smtpout.secureserver.net
 
     /**
      * Which SMTP authentication method to use: login, plain
