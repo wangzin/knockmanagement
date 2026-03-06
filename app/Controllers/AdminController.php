@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Libraries\EmailHandler;
 use App\Models\AboutModel;
 use App\Models\CleaningProcess;
 use App\Models\CleaningServices;
@@ -11,6 +12,7 @@ use App\Models\MenuModel;
 use App\Models\QuoteModel;
 use App\Models\RegistrationModel;
 use App\Models\Services;
+use App\Models\Testimony;
 use App\Models\Slider;
 use Exception;
 
@@ -19,10 +21,12 @@ class AdminController extends BaseController
     private $image_base_path;
     private $_image_path; 
     protected $db;
+    private $emailHandler;
     public function __construct(){
         $this->db=db_connect();
         $this->image_base_path='images/';
         $this->_image_path='images/about/';
+        $this->emailHandler = new EmailHandler();
          //production
         //  $this->image_base_path='public/images/';
         // $this->_image_path='public/images/about/';
@@ -580,6 +584,64 @@ class AdminController extends BaseController
         return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/9ed6280103d930c543274dcb46af1fa9');
     }
 
+
+    public function load_testimony_page(){
+        $data=$this->getgeneraldata();
+        $dataModel = new Testimony();
+        $data['testimony_data'] = $dataModel->findAll();
+        $data['max_seq'] = ($dataModel->selectMax('sequence')->first()['sequence'])+1;
+        session()->setFlashdata('page', 'admin/pages/website/testimony_page');
+        return view('admin/dashboard',$data);
+    }
+    public function save_testimony_details(){
+        $dataModel = new Testimony();
+        if($this->request->getVar('name')!=null){
+            $image_path=$this->request->getVar('imageid');
+            if($_FILES["image"]["name"]!="" && !empty($_FILES["image"]["name"])){
+                $fle=$this->image_base_path.'cleaningprocess/'.$this->request->getVar('imageid');
+                if ($this->request->getVar('imageid')!="" && file_exists($fle)){
+                    unlink($fle);
+                }
+                move_uploaded_file($_FILES['image']['tmp_name'],$this->image_base_path.'testimony/'.time().$_FILES["image"]["name"]);
+                $image_path=time().$_FILES["image"]["name"];
+            }
+            $update_data = [
+                'name'  => $this->request->getVar('name'),
+                'sequence'  => $this->request->getVar('sequence'),
+                'description'  => $this->request->getVar('description'),
+                'image'  =>$image_path,
+            ];
+            if($this->request->getVar('action_type')=="add"){
+                $update_data = $update_data +['created_at' => date('Y-m-d h:i:sa')];
+                $dataModel->insert($update_data);
+                session()->setFlashdata('message', 'Testimony data has been added successfully. Thank you');
+            }
+            if($this->request->getVar('action_type')=="edit"){
+                $update_data = $update_data +['updated_at' => date('Y-m-d h:i:sa')];
+                $dataModel->update($this->request->getVar('record_id'),$update_data);
+                session()->setFlashdata('message', 'Testimony data has been updated successfully. Thank you');
+            }
+        }
+        return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/9b4782210240dabtestc496b29958f0b4');
+    }
+    public function get_testimony_by_id($id){
+        $dataModel = new Testimony();
+        $data = $dataModel->where('id', $id)->first();
+        return json_encode($data);
+    }
+    
+    public function delete_testimony_details(){
+        $dataModel = new Testimony();
+        $fle=$this->image_base_path.'testimony/'.$this->request->getVar('imageid');
+        if ($this->request->getVar('imageid')!="" && file_exists($fle)){
+            unlink($fle);
+        }
+        $dataModel->delete($this->request->getVar('record_id'));
+        session()->setFlashdata('message', 'Testimony detail has been deleted successfully. Thank you');
+        return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/9b4782210240dabtestc496b29958f0b4');
+    }
+    
+
     public function load_application_page(){
         $data=$this->getgeneraldata();
         $dataModel = new RegistrationModel();
@@ -606,6 +668,31 @@ class AdminController extends BaseController
         $dataModel = new QuoteModel();
         $data = $dataModel->where('id', $id)->first();
         return json_encode($data);
+    }
+    public function send_response_email(){
+        $dataModel = new AboutModel();
+        $gdata=$dataModel->first();
+        $id=$this->request->getVar('record_id');
+        $dataModel = new QuoteModel();
+        $update_data = [
+            'response'  => $this->request->getVar('response'),
+            'updated_at' => date('Y-m-d h:i:sa')
+        ];
+        $dataModel->update($id,$update_data);
+        $data = $dataModel->where('id', $id)->first();
+
+        $email_content='Dear '.$data['full_name'].',<br><br>Thank you for reaching out to us through our website.<br><br>'.$this->request->getVar('response').
+        '<br><br>Best regards,<br>'.$gdata['org_name'].'<br>'.$gdata['contact'].'<br>'.$gdata['email'];
+        $email_data=[
+            'cus_subject' =>'Thank You for Your Message',
+            '_message'=>$email_content,
+            'cus_email'=>$data['email'],
+            
+        ];
+        $send_email=$this->emailHandler->sendemail($email_data);
+        var_dump($send_email);
+        // session()->setFlashdata('message', 'You email has been send successfully. Thank you');
+        // return redirect()->to('/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/fbf07aaa1e5dd8afa4c62dcf40ba18ae');
     }
 
     

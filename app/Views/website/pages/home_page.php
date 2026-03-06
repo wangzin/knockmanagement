@@ -14,7 +14,7 @@
     <?php if($abouts['slider_type']=="video"){?>
         <div class="carousel-item swiper-slide">
             <video autoplay loop muted playsinline>
-                <source src="<?php echo base_url();?>images/sliders/<?=$abouts['video_slider']?>" type="video/mp4">
+                <source src="<?php echo base_url();?>images/sliders/<?=$abouts['video_slider']?>" type="video/mp4" alt="Cleaning services in Toronto">
             </video>
         </div>
     <?php } ?>
@@ -29,7 +29,7 @@
             <div class="col-lg-6 col-12">
                 <div class="ratio ratio-1x1">
                     <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                        <source src="<?php echo base_url();?>images/about/<?=$abouts['about_video'];?>" type="video/mp4">
+                        <source src="<?php echo base_url();?>images/about/<?=$abouts['about_video'];?>" type="video/mp4" alt="Cleaning services in Toronto">
                     </video> 
 
                     <div class="about-video-info d-flex flex-column">
@@ -57,7 +57,7 @@
                 foreach($cleaningservices as $i=> $dat): ?>
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
                     <div class="custom-block-wrap">
-                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block img-fluid" alt="Retail and Office">
+                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block img-fluid" alt="Cleaning services in Toronto">
                         <div class="custom-block">
                             <h4 class="mt-3"><?=$dat['name'];?></h4>
                             <p class="mb-0"><?=$dat['description'];?></p>
@@ -80,7 +80,7 @@
                 foreach($excellence as $i=> $dat): ?>
                 <div class="col-lg-3 col-md-6 col-12 mb-4">
                     <div class="why-choose-item text-center">
-                        <img decoding="async" width="105" height="105" src="<?php echo base_url();?>images/excellancy/<?=$dat['image'];?>" data-src="<?php echo base_url();?>images/excellancy/<?=$dat['image'];?>" alt="Proven Experience" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3539 entered loaded et-animated" data-ll-status="loaded">
+                        <img decoding="async" width="105" height="105" src="<?php echo base_url();?>images/excellancy/<?=$dat['image'];?>" data-src="<?php echo base_url();?>images/excellancy/<?=$dat['image'];?>" alt="Cleaning services in Toronto" class="lazy et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone wp-image-3539 entered loaded et-animated" data-ll-status="loaded">
                         <h5><?=$dat['name'];?></h5>
                         <p><?=$dat['description'];?></p>
                     </div>
@@ -115,7 +115,7 @@
                 <?php }?>
                     <div class="process-card">
                         <div class="process-icon">
-                        <img decoding="async" width="100" height="100" src="<?php echo base_url();?>images/cleaningprocess/<?=$dat['image'];?>" data-src="<?php echo base_url();?>images/cleaningprocess/<?=$dat['image'];?>" alt="Site Assessment &amp; Planning" >
+                        <img decoding="async" width="100" height="100" src="<?php echo base_url();?>images/cleaningprocess/<?=$dat['image'];?>" data-src="<?php echo base_url();?>images/cleaningprocess/<?=$dat['image'];?>" alt="Cleaning services in Toronto">
                         </div>
                         <div class="process-number"><?=$dat['sequence']<10? '0'.$dat['sequence']:$dat['sequence'];?></div>
                         <h4><?=$dat['name'];?></h4>
@@ -138,7 +138,7 @@
                 foreach($services as $i=> $dat): ?>
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
                     <div class="custom-block-wrap">
-                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block-image img-fluid" alt="Retail and Office">
+                        <img src="<?php echo base_url();?>images/services/<?=$dat['image'];?>" class="custom-block-image img-fluid" alt="Cleaning services in Toronto">
                         <div class="custom-block">
                             <h4 class="mt-3"><?=$dat['name'];?></h4>
                             <p class="mb-0"><?=$dat['description'];?></p>
@@ -172,7 +172,7 @@
                     <!-- Testimonial 1 -->
                     <div class="testimonial-item p-4">
                         <div class="client-img mb-2">
-                            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Stephanie A" class="rounded-circle" width="80">
+                            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Cleaning services in Toronto" class="rounded-circle" width="80">
                         </div>
                         <h6 class="client-name">Stephanie A</h6>
                         <div class="stars text-warning mb-2">★★★★★</div>
@@ -184,7 +184,7 @@
                     <!-- Testimonial 2 -->
                     <div class="testimonial-item p-4">
                         <div class="client-img mb-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Sangeetha" class="rounded-circle" width="80">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Cleaning services in Toronto" class="rounded-circle" width="80">
                         </div>
                         <h6 class="client-name">Sangeetha Suwarnan</h6>
                         <div class="stars text-warning mb-2">★★★★★</div>
@@ -196,7 +196,7 @@
                     <!-- Testimonial 3 -->
                     <div class="testimonial-item p-4">
                         <div class="client-img mb-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Marc" class="rounded-circle" width="80">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Cleaning services in Toronto" class="rounded-circle" width="80">
                         </div>
                         <h6 class="client-name">Marc Robitaille</h6>
                         <div class="stars text-warning mb-2">★★★★★</div>
@@ -208,7 +208,7 @@
                     <!-- Testimonial 4 -->
                     <div class="testimonial-item p-4">
                         <div class="client-img mb-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Rachel Levman" class="rounded-circle" width="80">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewI8xd3bzp1zbbgEiZH32MzYV8vyYvKZVvw&s" alt="Cleaning services in Toronto" class="rounded-circle" width="80">
                         </div>
                         <h6 class="client-name">Rachel Levman</h6>
                         <div class="stars text-warning mb-2">★★★★★</div>

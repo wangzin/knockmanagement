@@ -17,6 +17,7 @@ class QuoteModel extends Model
         'email', 
         'phone', 
         'message', 
+        'response', 
         'created_at',
         'updated_at',
         'updated_by'

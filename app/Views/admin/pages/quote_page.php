@@ -80,9 +80,23 @@
                     <hr>
                     <h4 class="modal-title"><u>Response Section</u></h4>
                     <div class="form-group">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<label>Response Message: </label>
-							<textarea name="response" id="response" rows="5" onchange="remove_error('response')" class="form-control"></textarea>
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<label>Response Message Sample: </label><br>
+							<b>Subject:Thank You for Your Message</b><br><br>
+
+							Dear <span id="customer_name"></span>,<br><br>
+							Thank you for reaching out to us through our website.<br><br>
+
+							<span id="message_content"></span><br><br>
+
+							Best regards,<br>
+							<?=$abouts['org_name']?><br>
+							<?=$abouts['contact']?><br>
+							<?=$abouts['email']?><br>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<label>Response message content: </label>
+							<textarea name="response" id="response" rows="5" onchange="writemessage();remove_error('response')" class="form-control"></textarea>
 							<span class="text-danger" id="response_err"></span>
 						</div>
 					</div>
@@ -91,7 +105,7 @@
 					<div class="row pull-right">
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<input type="hidden" name="record_id" id="record_id">
-							<button class="btn btn-success" onclick="save_events()" type="button"> <i class="fa fa-edit"></i> Send </button>
+							<button class="btn btn-success" onclick="sendreply()" type="button"> <i class="fa fa-edit"></i> Send </button>
 						</div>
 					</div>
 				</div>
@@ -113,22 +127,24 @@
 		});
 	});
 
-    function save_events(){
+    function sendreply(){
         if(validated_form()){
-            $('#datetimerowcount').val(rowCount);
             $('#eventdetialsform').submit();
         }
     }
     function validated_form(){
         let retur_ty=true;
-        if($('#name').val()==""){
-            $('#name_err').html('Please provide event name');
-			$('#name').focus();
+        if($('#response').val()==""){
+            $('#response_err').html('Please mention response data');
+			$('#response').focus();
             retur_ty=false;
         }
        
         return retur_ty;
     }
+	function writemessage(){
+		$('#message_content').text($('#response').val());
+	}
 
  	function showedit(id){
 		let url='/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/e3c9b6af1b18ef41ffb8251fc19ddrr92f/'+id;
@@ -139,6 +155,7 @@
 			'success': function(responsedata){  
 				$('#record_id').val(responsedata.id);
 				$('#full_name').val(responsedata.full_name);
+				$('#customer_name').text(responsedata.full_name);
 				$('#phone').val(responsedata.phone);
 				$('#email').val(responsedata.email);
 				$('#message').val(responsedata.message);

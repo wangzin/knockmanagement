@@ -17,7 +17,7 @@
 			              <tr>
 			                <th></th>
 			                <th>Name</th>
-                            <th>Position</th>
+                            <th>description</th>
 							<th>Sequence No</th>
 							<th>Action</th>
 			              </tr>
@@ -30,8 +30,8 @@
 										<img onerror="this.src='<?php echo base_url();?>images/logo.jpg'" src="<?php echo base_url();?>images/testimony/<?=$dat['image'];?>" width="150" id="page_image1" class="img-text" align="left"> 
 									</td>
                                     <td> <?= $dat['name']?> </td>
-                                    <td> <?= $dat['position']?> </td>
-									<td> <?= $dat['sequence_no'];?> </td>
+                                    <td> <?= $dat['description']?> </td>
+									<td> <?= $dat['sequence'];?> </td>
 									<td>
 										<button type="button" class="btn btn-info btn-block" onclick="showedit('<?php echo $dat['id']?>')"><i class="fa fa-edit"></i>Edit</button>
 										<button type="button" class="btn btn-danger btn-block" onclick="delete_records('<?php echo $dat['id']?>','<?php echo $dat['image']?>','<?php echo $dat['name']?>')"><i class="fa fa-times"></i>Delete</button>
@@ -64,8 +64,8 @@
 						</div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 							<label>Sequence Number: <span class="text-danger">*</span></label>
-							<input type="number" name="sequence_no" value="0" id="sequence_no" class="form-control" onchange="remove_error('sequence_no')">
-							<span class="text-danger" id="sequence_no_err"></span>
+							<input type="number" name="sequence" value="0" id="sequence" class="form-control" onchange="remove_error('sequence')">
+							<span class="text-danger" id="sequence_err"></span>
 						</div>
 			        </div>
 					<div class="form-group">
@@ -73,11 +73,6 @@
 							<label>Full Name: <span class="text-danger">*</span></label>
 							<input type="text" name="name" id="name" class="form-control" onchange="remove_error('name')">
 							<span class="text-danger" id="name_err"></span>
-						</div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-							<label>Position: <span class="text-danger">*</span></label>
-							<input type="text" name="position" id="position" class="form-control" onchange="remove_error('position')">
-							<span class="text-danger" id="position_err"></span>
 						</div>
 			        </div>
                     <div class="form-group">
@@ -105,7 +100,7 @@
 <div class="modal modal-default" id="deleterecordid" >
   	<div class="modal-dialog modal-lg">
     	<div class="modal-content">
-        <form class="bootbox-form form-horizontal" method="POST" action="/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/29e9b464daf4fc9119b77667bbe8179a" id="deleteserviceform">
+        <form class="bootbox-form form-horizontal" method="POST" action="/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/29e9b464daf4fc9119eee667bbe8179a" id="deleteserviceform">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span></button>
@@ -137,7 +132,7 @@
         $('#name').val('');
         $('#title').val('');
         $('#position').val('');
-        $('#sequence_no').val('<?=$max_seq?>');
+        $('#sequence').val('<?=$max_seq?>');
         $('#description').val('');
 		$('#current_image').html('');
         $('#action_type').val('add');
@@ -169,17 +164,15 @@
         }
     }
     function showedit(id){
-        let url='/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/2d46ce35ca107546bcfaa0c995da6099/'+id;
+        let url='/529288ce6f5efcd3a2f57dea8f48fb4131f90c3e/2d46ce35ca107546bcfarrr995da6099/'+id;
 		$.ajax({
 			'url': url,
 			'type': 'GET',
 			'dataType': 'json',
 			'success': function(responsedata){  
                 $('#name').val(responsedata.name);
-                $('#title').val(responsedata.title);
-                $('#position').val(responsedata.position);
                 $('#description').val(responsedata.description);
-                $('#sequence_no').val(responsedata.sequence_no);
+                $('#sequence').val(responsedata.sequence);
                 $('#record_id').val(responsedata.id);
                 let current_image='<br><img src="<?php echo base_url();?>images/testimony/'+responsedata.image+'" width="150" class="img-text"> ';
 				$('#current_image').html(current_image);
